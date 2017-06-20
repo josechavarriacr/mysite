@@ -30,4 +30,3 @@ $profile = Profile::find()->orderBy('id ASC')->limit(1)->one();
 		</div>
 	</footer>
 </div>
-</div>
