@@ -37,6 +37,7 @@ class m130524_201442_init extends Migration
             'created_at' => $this->integer(),
             'type' => "enum('post','about','privacy','ama')",
             'status' => $this->boolean(),
+            'repo' => $this->string(64),
             ], $tableOptions);
 
         $this->createTable('{{%tbl_category}}',[
