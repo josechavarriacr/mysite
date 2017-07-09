@@ -51,8 +51,8 @@ INSTALLATION
 ------------
 
 1- git clone https://github.com/josechavarriacr/justblog.git
-or dowloaded de zip file from https://github.com/josechavarriacr/justblog
-
+or dowloaded de zip file from https://chavarria.cr/justblog
+zip
 2- composer update
 
 3- composer install 
@@ -70,5 +70,7 @@ ACCESS
 home -> http://localhost/justblog
 
 admin -> http://localhost/justblog/admin
+
+# Try Live
 
 
