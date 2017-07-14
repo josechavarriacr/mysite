@@ -1,4 +1,4 @@
-JustBlog
+Forked and  custum JustBlog
 ===============================
 
 Simple platform for blogging based in Yii2
@@ -51,8 +51,8 @@ INSTALLATION
 ------------
 
 1- git clone https://github.com/josechavarriacr/justblog.git
-or dowloaded de zip file from https://chavarria.cr/justblog
-zip
+or dowloaded de zip file from https://chavarria.cr/justblog.zip
+
 2- composer update
 
 3- composer install 
