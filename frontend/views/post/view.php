@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use frontend\models\Post;
 use kartik\ipinfo\IpInfo;
 use kartik\popover\PopoverX;
 use kartik\social\Disqus;
@@ -45,72 +44,14 @@ Yii::$app->meta->getMetaTags($model->id);
                             'url' => $model->url,
                             ]); ?>
                             <!-- end _share -->
-
+                            <hr>
                         </div>
                     </article>
-                </div><hr>
-
-                <?php 
-                $prev = Post::find()->where([ '<','id', $model->id])->andWhere(['type'=>'post'])->andWhere(['status'=>1])
-                ->orderBy(['id'=>SORT_DESC])->one();
-
-                $next =Post::find()->where(['>','id', $model->id])->andWhere(['type'=>'post'])->andWhere(['status'=>1])
-                ->orderBy(['id'=>SORT_DESC])->one();
-                ?>
-
-
-                <div class="row">
-                 <div class="col-xs-6 col-xs-offset-1 col-md-3">
-                    <?php if ($prev!=null): ?>
-                        <div class="thumbnail">
-                           <a href="<?= Html::encode($prev['url']) ?>">
-                            <img class="img-responsive" src="<?= Html::encode($prev['img']) ?>">
-                        </a>
-                        <h3><a href="<?= Html::encode($prev['url']) ?>"><?= Html::encode($prev['title']) ?></a></h3>
-                        <p><?= Html::encode(substr($prev['descripcion'],0,200) ) ?></p>
-                        <div class="ratings">
-                            <p class="pull-right"><?= Html::encode($prev['count'])?> Visitas</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
-                        </div>
-                    </div>
-                <?php endif; ?> 
-            </div>
-
-
-            <div class="col-xs-6 col-xs-offset-4 col-md-3">
-                <?php if ($next!=null): ?> 
-                    <div class="thumbnail">
-                      <a href="<?= Html::encode($next['url']) ?>">
-                        <img class="img-responsive" src="<?= Html::encode($next['img']) ?>">
-                    </a>
-                    <h3><a href="<?= Html::encode($prev['url']) ?>"><?= Html::encode($next['title']) ?></a></h3>
-                    <p><?= Html::encode( substr($next['descripcion'], 0, 200) ) ?></p>
-                    <div class="ratings">
-                        <p class="pull-right"><?= Html::encode($next['count'])?> Visitas</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
-                    </div>
                 </div>
-            <?php endif ;?>
-        </div>
-    </div>
-    <hr>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                       <?=Disqus::widget(['settings'=>['shortname'=>'chavarria-cr']]);?> 
+                   </div>
+               </div>
 
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-         <?=Disqus::widget(['settings'=>['shortname'=>'chavarria-cr']]);?> 
-     </div>
- </div>
-
-</div>
+           </div>

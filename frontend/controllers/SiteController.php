@@ -28,11 +28,16 @@ class SiteController extends Controller
 		return [
 		'access' => [
 		'class' => AccessControl::className(),
-		'only' => ['logout', 'signup','requestPasswordReset','resetPassword','contact'],
+		'only' => ['logout', 'signup','request-password-reset','reset-password','contact'],
 		'rules' => [
 		[
         'actions' => ['signup'],//allows without login
         'allow' => false, //true for use singup
+        'roles' => ['?'],
+        ],
+        [
+        'actions' => ['request-password-reset'],//allows without login
+        'allow' => false, //true for use resetPassword
         'roles' => ['?'],
         ],
         [
