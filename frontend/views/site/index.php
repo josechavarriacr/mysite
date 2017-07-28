@@ -5,7 +5,7 @@ Yii::$app->site->getMetaTags();
 <div class="site-index">
 
 	<div class="jumbotron">
-		<h1>Blog de Jose</h1>
+		<h1>Jose Chavarría</h1>
 		<p class="lead">
 			<span class="label label-info">Cloud</span>
 			<span class="label label-success">Big Data</span>
@@ -17,7 +17,7 @@ Yii::$app->site->getMetaTags();
 	<div class="body-content">
 
 		<div class="row blog">
-			<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-9 col-sm-offset-3">
 				<div class="col-lg-10 col-lg-offset-1">
 					<img src="uploads/meta/screen.gif" alt="">
 				</div>
