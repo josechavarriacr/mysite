@@ -1,5 +1,8 @@
 <?php
 return [
+    'params' => [
+        'icon-framework' => 'fi'  // set elusive icon font as default framework
+        ],
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
