@@ -6,7 +6,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use miloschuman\highcharts\Highcharts;
 use yii\web\JsExpression;
-use backend\models\Logs;
 use miloschuman\highcharts\SeriesDataHelper;
 
 $this->title = 'Charts';

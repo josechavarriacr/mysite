@@ -254,4 +254,19 @@ class Logs extends \yii\db\ActiveRecord
 		}
 	}
 
+	public function getIps(){
+		$array = [];
+		$sq = "select tbl_logs.ip, count(tbl_logs.ip) as 'Total' from tbl_logs
+		group by tbl_logs.ip
+		order by Total desc
+		limit 10";
+		$data = Logs::setQueries($sql):
+		if (!is_null($data)) {
+			foreach ($data as $value){
+				$array[] = $value;
+			}
+			return $array;
+		} 
+	}
+
 }
