@@ -57,7 +57,7 @@ class AnalyticsController extends Controller
         $device = Logs::getDevice();
         $type = Logs::getType();
         $new = Logs::getNew();
-        $ips = Logs::
+        $ips = Logs::getIps();
 
 
         return $this->render('charts', [
@@ -71,6 +71,7 @@ class AnalyticsController extends Controller
             'device' => $device,
             'type' => $type,
             'new' => $new,
+            'ips' => $ips,
             ]);
     }
 }

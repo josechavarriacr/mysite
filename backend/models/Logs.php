@@ -256,17 +256,29 @@ class Logs extends \yii\db\ActiveRecord
 
 	public function getIps(){
 		$array = [];
-		$sq = "select tbl_logs.ip, count(tbl_logs.ip) as 'Total' from tbl_logs
+		$sql = "select tbl_logs.ip, count(tbl_logs.ip) as 'total' from tbl_logs
 		group by tbl_logs.ip
 		order by Total desc
 		limit 10";
-		$data = Logs::setQueries($sql):
+		$data = Logs::setQueries($sql);
 		if (!is_null($data)) {
 			foreach ($data as $value){
 				$array[] = $value;
 			}
 			return $array;
 		} 
+	}
+
+	public function getFlag($ip){
+		$json = file_get_contents('http://freegeoip.net/json/'.$ip);
+		$obj = json_decode($json);
+		return strtolower($obj->country_code);
+	}
+
+	public function getCountry($ip){
+		$json = file_get_contents('http://freegeoip.net/json/'.$ip);
+		$obj = json_decode($json);
+		return $obj->country_name;
 	}
 
 }
