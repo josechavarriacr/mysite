@@ -10,6 +10,7 @@ Icon::map($this);
 
 <div class="row">
 	<div class="col-lg-5">
+	<h1>Top Visitors by IP</h1>
 		<table class="table table-hover">
 			<thead>
 				<tr>
