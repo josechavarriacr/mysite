@@ -34,7 +34,8 @@
         "giovdk21/yii2-syntaxhighlighter": "dev-master",
         "2amigos/yii2-selectize-widget": "~1.0",
         "sinergi/browser-detector": "*",
-        "miloschuman/yii2-highcharts-widget": "*"
+        "miloschuman/yii2-highcharts-widget": "*",
+        "kartik-v/yii2-markdown": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
