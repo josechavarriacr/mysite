@@ -21,6 +21,9 @@ return [
             'uploadUrl' => '@web/uploads',
             'imageAllowExtensions'=>['jpg','png','gif']
                     ],
+        'markdown' => [
+            'class' => 'kartik\markdown\Module',
+                    ],
                 ],
     'components' => [
         'as beforeRequest' => [

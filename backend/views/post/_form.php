@@ -9,6 +9,7 @@ use backend\components\TagsInput;
 use yii\helpers\ArrayHelper;
 use dosamigos\selectize\SelectizeTextInput;
 use kartik\switchinput\SwitchInput;
+use kartik\markdown\MarkdownEditor;
 ?>
 
 <div class="row">
@@ -26,14 +27,14 @@ use kartik\switchinput\SwitchInput;
             <?= $form->field($model, 'keyword')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'repo')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'categories')->widget(Select2::classname(), [
-             'data' => $data = ArrayHelper::map(Category::find()->all(),'id','name'),
-             'options' => ['value'=> $model->categories,  'placeholder' => 'Select categories...', 'multiple' => true],
-             'pluginOptions' => [
-             'categories' => true,
-             'tokenSeparators' => [',', ' '],
-             'maximumInputLength' => 10
-             ],
-             ])->label('Categories'); ?>
+               'data' => $data = ArrayHelper::map(Category::find()->all(),'id','name'),
+               'options' => ['value'=> $model->categories,  'placeholder' => 'Select categories...', 'multiple' => true],
+               'pluginOptions' => [
+               'categories' => true,
+               'tokenSeparators' => [',', ' '],
+               'maximumInputLength' => 10
+               ],
+               ])->label('Categories'); ?>
 
             <?= $form->field($model, 'tags')->widget(SelectizeTextInput::className(), [
                 'loadUrl' => ['post/list'],
@@ -57,17 +58,11 @@ use kartik\switchinput\SwitchInput;
                 <?php endif; ?>
                 <?= $form->field($model, 'file')->fileInput()?>
 
-                <?= $form->field($model, 'text')->widget(\yii\redactor\widgets\Redactor::className(), [
-                    'clientOptions' => [
-                    'minHeight' => 400,
-                    'imageManagerJson' => ['/redactor/upload/image-json'],
-                    'imageUpload' => ['/redactor/upload/image'],
-        // 'imageUpload' => \yii\helpers\Url::to(['/redactor/upload/image']),
-                    'fileUpload' => ['/redactor/upload/file'],
-        // 'lang' => 'en_en',
-                    'plugins' => ['clips','imagemanager','table', 'video','fontfamily', 'fontsize','fontcolor'],
-                    ]
-                    ])?>
+                <?= MarkdownEditor::widget([
+                    'model' => $model, 
+                    'attribute' => 'text',
+                    ]);?>
+
                     <?php ActiveForm::end(); ?>
 
                 </div>
