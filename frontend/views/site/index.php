@@ -24,17 +24,17 @@ Yii::$app->site->getMetaTags();
 			</div>
 
 			<div class="col-sm-6 col-sm-offset-3">
-				<!-- <?php
-				Yii::$app->sc->setStart(__LINE__);
-				// ...in one move!
-				echo "<h2>How it works</h2>";
-				echo "<ol>";
-				echo "<li>Write your code</li>";
-				echo "<li>Show your code</li>";
-				echo "</ol>";
-				Yii::$app->sc->collect('php', Yii::$app->sc->getSourceToLine(__LINE__, __FILE__));
-				Yii::$app->sc->renderSourceBox();
-				?> -->
+				 <?php
+				// Yii::$app->sc->setStart(__LINE__);
+				// // ...in one move!
+				// echo "<h2>How it works</h2>";
+				// echo "<ol>";
+				// echo "<li>Write your code</li>";
+				// echo "<li>Show your code</li>";
+				// echo "</ol>";
+				// Yii::$app->sc->collect('php', Yii::$app->sc->getSourceToLine(__LINE__, __FILE__));
+				// Yii::$app->sc->renderSourceBox();
+				?> 
 				<h2 class="heading">Bienvenidos a mi página</h2>
 				<p><span class="label label-success"><i class="fa fa-terminal" aria-hidden="true"></i></span> Soy un programador y entusiasta de la tecnología al que le gusta aprender y desaprender rápidamente, me gusta pensar que la programación es un arte en donde el computador es mi lienzo y con el código fuente escribo mi obra de arte.</p>
 				<p><span class="label label-success"><i class="fa fa-terminal" aria-hidden="true"></i></span> Nací en los 90’s por lo que Internet lo considero parte de mí, gran parte de mi infancia estuvo marcada por la fascinación y especulación de la tecnología; dibujos animados, series y películas que giraban en torno a la tecnología lograban atraer y mantener mi atención.</p>
