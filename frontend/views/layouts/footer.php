@@ -19,7 +19,9 @@ $profile = Profile::find()->orderBy('id ASC')->limit(1)->one();
 				
 				<?php if (!empty($profile)): ?>
 					<div class="col-md-12 col-sm-4 item social">
-						<a href="<?=$profile->facebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
+					<?php if(isset($profile->facebook))	?>
+					<a href="<?=$profile->facebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
+					<?php endif;?>
 						<a href="<?=$profile->twitter;?>" target="_blank"><i class="fa fa-twitter"></i></a>
 						<a href="<?=$profile->linkedin;?>" target="_blank"><i class="fa fa-linkedin"></i></a>
 						<a href="<?=$profile->github;?>" target="_blank"><i class="fa fa-github"></i></a>
